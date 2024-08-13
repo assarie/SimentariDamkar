@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id')->constrained('items');
+            $table->foreignId('item_id')
+                    ->constrained('items')
+                    ->onDelete('cascade'); //jika tabel 'item' dihapus, semua baris terkait tabel 'transaction' dihapus juga.
             $table->enum('transaction_type', ['masuk', 'keluar']);
             $table->integer('quantity');
             $table->timestamp('transaction_date')->useCurrent();

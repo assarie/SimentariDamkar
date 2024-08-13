@@ -9,14 +9,42 @@
     </x-slot>
 
     <div class="p-6 mb-2 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-        {{ __("You're logged in!")  }}
+        {{ __("Kamu berhasil Login!")  }}
     </div>
-    <div class="p-6 mb-2 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
-        <h3 class="capitalize text-xl font-semibold leading-tight text-center">
+    <div class="relaive p-6 mb-2 overflow-hidden bg-white rounded-md shadow-md dark:bg-dark-eval-1">
+        <h3 id="toggleDescription" class="capitalize text-xl font-semibold leading-tight text-center cursor-pointer flex items-center justify-center">
             sistem manajemen penataan inventaris dalam mengamankan alat - alat pemadam kebakaran
-
+            <img id="arrowIcon" src="{{asset('images/arrow-down.gif')}}" alt="arrow" class="ml-2 w-5 h-5 transform transition-transform duration-300 opacity-35">
         </h3>
-    </div>
+        <!-- Deskripsi yang bisa ditampilkan -->
+    <div id="description" class="hidden mt-4 text-center">
+      <p>
+          Simentari Damkar adalah sistem baru yang dirancang untuk mengatasi masalah kurangnya pengelolaan inventaris alat pemadam kebakaran di UPTD PBD Wilayah Tengah. <span class="highlight">Sistem ini menggunakan teknologi QR code untuk melacak dan mencatat semua peralatan secara digital</span>, sehingga lebih akurat, efisien, dan mudah dikelola. Dengan Simentari Damkar, diharapkan dapat mengurangi kesalahan pencatatan, meningkatkan efektivitas kerja petugas, dan memastikan peralatan selalu siap digunakan saat dibutuhkan.
+      </p>
+      <style>
+        .highlight{
+          background-color: #B4D6CD;
+          padding: 0 2px; /* Spasi di sekitar teks yang disorot */
+        }
+      </style>
+  </div>
+</div>
+
+    <!-- JavaScript -->
+<script>
+  document.getElementById('toggleDescription').addEventListener('click', function() {
+      var description = document.getElementById('description');
+      var arrowIcon = document.getElementById('arrowIcon');
+
+      if (description.classList.contains('hidden')) {
+          description.classList.remove('hidden');
+          arrowIcon.classList.add('rotate-180'); // Rotate icon to indicate expanded state
+      } else {
+          description.classList.add('hidden');
+          arrowIcon.classList.remove('rotate-180'); // Rotate icon back to original state
+      }
+  });
+</script>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-[#EB4B5A] dark:bg-gray-800 shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600 dark:border-gray-600 text-white font-medium group">

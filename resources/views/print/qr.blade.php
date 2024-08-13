@@ -17,40 +17,38 @@
    
     
     @for ($i = 0; $i < $infos['quantity']; $i++)
-    <div class="grid grid-cols-10 grid-rows-5 border border-black m-2" style="width: 10cm; height: 5cm; page-break-inside: avoid;">
-        <div class="row-span-3 col-span-3 border border-black flex justify-center">
-            <img class="object-contain" src="{{asset('images/logobpn.png')}}" alt="">
-        </div>
-        <div class="col-span-4 row-span-3 border border-black flex justify-center  ">
-            <img src="{{ asset($item->qr_path) }}" class="h-full p-2 " alt="">
-        </div>
-        <div class="row-span-3 col-span-3 col-start-8 border border-black justify-center">
-            <img class="object-contain" src="{{asset('images/bpbd.png')}}" alt="">
-        </div>
-        <div class="grid grid-rows-2 place-items-center col-span-10 row-span-2 row-start-4 border border-black flex justify-center">
-            <h5 class="block text-center uppercase font-sans text-md antialiased font-semibold leading-snug tracking-normal text-black">
-                UPTD PBD WILAYAH TENGAH
     
-            </h5>
-            <h5 class="block text-center uppercase font-sans text-md antialiased font-semibold leading-snug tracking-normal text-black">
-                bpbd kota balikpapan
-            </h5>
-        </div>
+    <div class="grid grid-rows-3 border border-black m-2" style="width: 12cm; height: 7cm; page-break-inside: avoid;">
+    {{-- Baris Logo --}}
+    <div class="flex flex-col items-center border-b border-black px-4 py-2">
+    <div class="flex justify-between items-center w-full">
+        <img class="object-contain h-14 mx-1" src="{{asset('images/BPSDM.png')}}" alt="">
+        <img class="object-contain h-14 mx-1" src="{{asset('images/logoBpn.png')}}" alt="">
+        <img class="object-contain h-14 mx-1" src="{{asset('images/bpbd.png')}}" alt="">
+        <img class="object-contain h-14 mx-1" src="{{asset('images/simentari.png')}}" alt="">
     </div>
-
-            
-        
-        
+    <p class="text-center mt-0 text-blue-500 underline">
+        https://simentarii-damkarr2.site/
+    </p>
+    </div>
+        <div class="flex justify-center items-center border-b border-black py-12">
+            <img src="{{ asset($item->qr_path) }}" class="h-24 p-2" alt="">
+        </div>
+        <!-- Teks di bagian bawah -->
+    <div class="flex flex-col items-center justify-center py-12">
+        <h5 class="block text-center uppercase font-sans text-md antialiased font-semibold leading-snug tracking-normal text-black">
+            UPTD PBD WILAYAH TENGAH
+        </h5>
+        <h5 class="block text-center uppercase font-sans text-md antialiased font-semibold leading-snug tracking-normal text-black">
+            BPBD KOTA BALIKPAPAN
+        </h5>
+        <h5 class="block text-center uppercase font-sans text-md antialiased font-semibold leading-snug tracking-normal text-black">
+            PKP-XXI TAHUN 2024
+        </h5>
+    </div>
+</div>
+    
     @endfor
-
-    
-
-    
-
-    </div>
-
-
-
     {{-- @dd($quantity, $size); --}}
 </body>
 </html>
